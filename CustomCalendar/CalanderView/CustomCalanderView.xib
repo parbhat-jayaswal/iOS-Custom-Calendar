@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomCalanderView" customModule="CustomCalendar" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="190"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kms-8u-h5W">
+                    <rect key="frame" x="0.0" y="20" width="414" height="150"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KCq-PF-132">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Date Range" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VZX-Dw-Tmj">
+                                    <rect key="frame" x="15" y="15" width="141" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feb" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghH-cL-fGg">
+                                    <rect key="frame" x="350" y="15" width="29" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4LG-jX-4GE">
+                                    <rect key="frame" x="379" y="0.0" width="35" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="35" id="w5y-tf-Vhj"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="chevron.right" catalog="system" title=""/>
+                                    <connections>
+                                        <action selector="nextBtnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="aKt-Fc-LGc"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nkq-DK-KJW">
+                                    <rect key="frame" x="315" y="0.0" width="35" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="35" id="4aC-LF-ez8"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="chevron.left" catalog="system" title=""/>
+                                    <connections>
+                                        <action selector="prevBtnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="nod-M1-7KF"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="ghH-cL-fGg" firstAttribute="leading" secondItem="Nkq-DK-KJW" secondAttribute="trailing" id="2k1-hc-MaN"/>
+                                <constraint firstItem="ghH-cL-fGg" firstAttribute="centerY" secondItem="KCq-PF-132" secondAttribute="centerY" id="2xh-FF-e3e"/>
+                                <constraint firstAttribute="height" constant="50" id="CMV-ZR-Mlb"/>
+                                <constraint firstAttribute="bottom" secondItem="Nkq-DK-KJW" secondAttribute="bottom" id="FAa-dv-fMw"/>
+                                <constraint firstItem="Nkq-DK-KJW" firstAttribute="top" secondItem="KCq-PF-132" secondAttribute="top" id="IAs-H5-JTr"/>
+                                <constraint firstAttribute="bottom" secondItem="4LG-jX-4GE" secondAttribute="bottom" id="K1z-UZ-raE"/>
+                                <constraint firstItem="4LG-jX-4GE" firstAttribute="top" secondItem="KCq-PF-132" secondAttribute="top" id="OQW-hu-2gj"/>
+                                <constraint firstAttribute="trailing" secondItem="4LG-jX-4GE" secondAttribute="trailing" id="Svd-vE-Ace"/>
+                                <constraint firstItem="VZX-Dw-Tmj" firstAttribute="leading" secondItem="KCq-PF-132" secondAttribute="leading" constant="15" id="ggb-cy-C1K"/>
+                                <constraint firstItem="VZX-Dw-Tmj" firstAttribute="centerY" secondItem="KCq-PF-132" secondAttribute="centerY" id="mNs-Pr-X5I"/>
+                                <constraint firstItem="4LG-jX-4GE" firstAttribute="leading" secondItem="ghH-cL-fGg" secondAttribute="trailing" id="vLr-xM-udh"/>
+                            </constraints>
+                        </view>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="KOD-Um-JeB">
+                            <rect key="frame" x="0.0" y="50" width="414" height="100"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g3P-Ue-j4e">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="KCq-PF-132" secondAttribute="trailing" id="FAx-Gt-gPT"/>
+                        <constraint firstAttribute="trailing" secondItem="KOD-Um-JeB" secondAttribute="trailing" id="Skg-9L-9SU"/>
+                        <constraint firstItem="KOD-Um-JeB" firstAttribute="leading" secondItem="Kms-8u-h5W" secondAttribute="leading" id="b8t-R7-UlV"/>
+                        <constraint firstItem="KOD-Um-JeB" firstAttribute="top" secondItem="KCq-PF-132" secondAttribute="bottom" id="fmU-bH-ymK"/>
+                        <constraint firstItem="KCq-PF-132" firstAttribute="top" secondItem="Kms-8u-h5W" secondAttribute="top" id="gQ2-61-EPj"/>
+                        <constraint firstAttribute="bottom" secondItem="KOD-Um-JeB" secondAttribute="bottom" id="i9C-y0-Opv"/>
+                        <constraint firstItem="KCq-PF-132" firstAttribute="leading" secondItem="Kms-8u-h5W" secondAttribute="leading" id="qfv-td-KWc"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Kms-8u-h5W" secondAttribute="bottom" constant="20" id="78E-wm-Epj"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Kms-8u-h5W" secondAttribute="trailing" id="KtM-2g-oqz"/>
+                <constraint firstItem="Kms-8u-h5W" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="g8i-fA-gJB"/>
+                <constraint firstItem="Kms-8u-h5W" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="jCJ-EY-Ph9"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="calanderCollectionView" destination="KOD-Um-JeB" id="gVm-Wn-CL5"/>
+                <outlet property="monthLbl" destination="ghH-cL-fGg" id="eLq-0d-Uni"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="-136.60714285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

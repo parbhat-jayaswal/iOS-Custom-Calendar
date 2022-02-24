@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iLa-FG-2Az">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Pf4-N4-bVp">
+            <objects>
+                <viewController id="iLa-FG-2Az" customClass="ViewController" customModule="Calander" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xnU-X4-k7C">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X85-Lr-akY">
+                                <rect key="frame" x="0.0" y="44" width="414" height="190"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="d2R-Py-bne"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9DL-fh-9Ur"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="X85-Lr-akY" firstAttribute="leading" secondItem="9DL-fh-9Ur" secondAttribute="leading" id="G9c-HO-Sxk"/>
+                            <constraint firstItem="9DL-fh-9Ur" firstAttribute="trailing" secondItem="X85-Lr-akY" secondAttribute="trailing" id="NID-uV-4zN"/>
+                            <constraint firstItem="X85-Lr-akY" firstAttribute="top" secondItem="9DL-fh-9Ur" secondAttribute="top" id="s0z-2H-UZe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="calanderView" destination="X85-Lr-akY" id="QQt-jf-l33"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RZE-WJ-U29" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="129" y="70"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
