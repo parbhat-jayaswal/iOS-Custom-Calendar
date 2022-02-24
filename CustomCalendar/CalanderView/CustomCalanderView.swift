@@ -20,9 +20,9 @@ class CustomCalanderView: UIView {
     var selectionType :SelectionType = .multiple
     fileprivate var calanderDateList: [Date] = []
     fileprivate var currentMonth: Int = 0
+
+    var singleSelectedDate: Date?
     
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
         // Drawing code
         initilize()
@@ -43,7 +43,14 @@ class CustomCalanderView: UIView {
             calanderDateList = (weekdays.lowerBound ..< weekdays.upperBound)
                 .compactMap { calendar.date(byAdding: .day, value: $0 - dayOfWeek, to: date) }.filter { $0 >= Date() }
         }
+        if let month = calanderDateList.first { monthLbl.text = monthStr(date: month) }
         calanderCollectionView.reloadData()
+    }
+    
+    private func monthStr(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM"
+        return dateFormatter.string(from: date)
     }
     
     @IBAction func nextBtnAction(_ sender: UIButton) {
@@ -86,7 +93,7 @@ extension CustomCalanderView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch selectionType {
         case .single:
-            print("Single Type")
+            singleSelectedDate = calanderDateList[indexPath.row]
         case .multiple :
             print("Multiple Type")
         }
