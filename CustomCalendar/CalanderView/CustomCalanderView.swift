@@ -35,7 +35,6 @@ class CustomCalanderView: UIView {
         initilizeDate(date: Date())
     }
     
-    
     private func initilizeDate(date: Date) {
         let calendar = Calendar.current
         let dayOfWeek = calendar.component(.day, from: date)

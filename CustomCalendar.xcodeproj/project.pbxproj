@@ -157,8 +157,8 @@
 		7F29965E27C7E3FF000F1A26 /* CalanderCell */ = {
 			isa = PBXGroup;
 			children = (
-				7F29965F27C7E3FF000F1A26 /* CalanderViewCell.xib */,
 				7F29966027C7E3FF000F1A26 /* CalanderViewCell.swift */,
+				7F29965F27C7E3FF000F1A26 /* CalanderViewCell.xib */,
 			);
 			path = CalanderCell;
 			sourceTree = "<group>";
