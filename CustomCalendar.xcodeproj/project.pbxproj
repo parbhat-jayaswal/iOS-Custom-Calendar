@@ -110,8 +110,7 @@
 				7F29962627C7E3AE000F1A26 /* AppDelegate.swift */,
 				7F29962827C7E3AE000F1A26 /* SceneDelegate.swift */,
 				7F29965627C7E3D9000F1A26 /* Controllers */,
-				7F29965927C7E3E6000F1A26 /* CalanderView */,
-				7F29965E27C7E3FF000F1A26 /* CalanderCell */,
+				B544796F27C8A4840046BD00 /* LinearCalendar */,
 				7F29966327C7EB0A000F1A26 /* Utility */,
 				7F29962C27C7E3AE000F1A26 /* Main.storyboard */,
 				7F29963127C7E3AF000F1A26 /* LaunchScreen.storyboard */,
@@ -169,6 +168,15 @@
 				7F29962F27C7E3AF000F1A26 /* Assets.xcassets */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		B544796F27C8A4840046BD00 /* LinearCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				7F29965927C7E3E6000F1A26 /* CalanderView */,
+				7F29965E27C7E3FF000F1A26 /* CalanderCell */,
+			);
+			path = LinearCalendar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

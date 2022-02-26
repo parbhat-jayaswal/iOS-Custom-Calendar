@@ -12,16 +12,25 @@ enum SelectionType {
     case multiple
 }
 
-class CustomCalanderView: UIView {
+protocol CustomCalanderProtocal {
+    func singleSelectedDate(date: Date)
+    func multiSelectedDate(date: [Date])
+}
+
+
+final class CustomCalanderView: UIView {
     
     @IBOutlet weak var monthLbl: UILabel!
     @IBOutlet weak var calanderCollectionView: UICollectionView!
     
-    var selectionType :SelectionType = .multiple
+    public var selectionType :SelectionType?
+    
     fileprivate var calanderDateList: [Date] = []
     fileprivate var currentMonth: Int = 0
-
-    var singleSelectedDate: Date?
+    
+    
+    public var delegate: CustomCalanderProtocal?
+    
     
     override func draw(_ rect: CGRect) {
         // Drawing code
@@ -33,6 +42,8 @@ class CustomCalanderView: UIView {
         calanderCollectionView.dataSource = self
         self.calanderCollectionView.register(UINib(nibName: "CalanderViewCell", bundle: nil), forCellWithReuseIdentifier: "CalanderViewCell")
         initilizeDate(date: Date())
+        
+        calanderDateList.insert(Date(), at: 0)
     }
     
     private func initilizeDate(date: Date) {
@@ -40,7 +51,9 @@ class CustomCalanderView: UIView {
         let dayOfWeek = calendar.component(.day, from: date)
         if let weekdays = calendar.range(of: .day, in: .month, for: date) {
             calanderDateList = (weekdays.lowerBound ..< weekdays.upperBound)
-                .compactMap { calendar.date(byAdding: .day, value: $0 - dayOfWeek, to: date) }.filter { $0 >= Date() }
+                .compactMap { calendar.date(byAdding: .day, value: $0 - dayOfWeek, to: date) }.filter {
+                    $0 >= Date()
+                }
         }
         if let month = calanderDateList.first { monthLbl.text = monthStr(date: month) }
         calanderCollectionView.reloadData()
@@ -61,10 +74,15 @@ class CustomCalanderView: UIView {
     }
     
     @IBAction func prevBtnAction(_ sender: UIButton) {
-        if currentMonth >= 1 {
+        if currentMonth > 1 {
             currentMonth -= 1
             let nextMonth = Calendar.current.date(byAdding: .month, value: currentMonth, to: Date())
             initilizeDate(date: nextMonth ?? Date())
+        } else if currentMonth == 1 {
+            currentMonth -= 1
+            initilizeDate(date: Date())
+            calanderDateList.insert(Date(), at: 0)
+            calanderCollectionView.reloadData()
         }
     }
 }
@@ -90,11 +108,17 @@ extension CustomCalanderView: UICollectionViewDataSource {
 
 extension CustomCalanderView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        print(selectionType)
+        
         switch selectionType {
         case .single:
-            singleSelectedDate = calanderDateList[indexPath.row]
+            delegate?.singleSelectedDate(date: calanderDateList[indexPath.row])
         case .multiple :
             print("Multiple Type")
+            // delegate?.multiSelectedDate(date: calanderDateList)
+        case .none:
+            print(":")
         }
     }
 }
